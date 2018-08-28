@@ -3,10 +3,10 @@ FROM node:alpine as builder
 
 WORKDIR '/app'
 
-COPY package.json .
+COPY package.json ./
 RUN npm install
 
-COPY . .
+COPY ./ ./
 RUN npm run build
 
 # second stage (no need for tag if you dont need ref)
